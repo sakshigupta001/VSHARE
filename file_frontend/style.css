@@ -1,0 +1,210 @@
+:root{
+    --main-bg-color: #b4dddb;
+    /* --main-bg-color: #6294ce; */
+    --border-color: #c0c2d4;
+    --container-width: 500PX;
+}
+body,html{
+    font-family: system-ui;
+    /* background: var(--main-bg-color); */
+    background: url(./img/b1.jpg);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.webhead{
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    margin-bottom: 500px;
+    margin-right: 610px;
+}
+.heading{
+    font-size: 45px;
+    color: rgb(6, 5, 73);
+    text-shadow: -2px 2px 2px #3e49b3 ;
+    margin-left: 9px;
+}
+.subheading{
+    font-size: 25px;
+    color: rgb(6, 5, 73);
+    text-shadow: -2px 2px 20px #3e49b3;
+}
+body, .drop-zone, .upload-container{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+body{
+    flex-direction: row;
+}
+.upload-container{
+    background: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #4d6665;
+}
+.drop-zone{
+    width: var(--container-width);
+    height: 200px;
+    border: 2px solid;
+    border-color: var(--border-color);
+    margin: 20px;
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+.dragged.drop-zone{
+    background: var(--main-bg-color);
+    border-color: rgb(85, 101, 192);
+}
+.icon-container{
+    width: 75px;
+    height: 100px;
+    position: relative; 
+}
+.icon-container img{
+    width: 75px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: transform 250ms ease-in-out;
+}
+.icon-container .center{
+    z-index: 2;
+}
+.icon-container .left, .icon-container .right{
+    filter: grayscale(0.5);
+    transform: scale(0.5);
+    
+}
+.dragged .icon-container .right{
+    transform: rotate(10deg) translateX(20px) scale(0.9);
+}
+.dragged .icon-container .left{
+    transform: rotate(-10deg) translateX(-20px) scale(0.9);
+}
+.dragged .icon-container .center{
+    transform: translateY(-5px);
+}
+#file{
+    display: none;
+}
+.browse{
+    color: rgb(88, 46, 241);
+    cursor: pointer;
+}
+
+.sharing-container{
+    width: var(--container-width);
+    margin-bottom: 20px;
+}
+p{
+    opacity: 0.9;
+    text-align: center;
+}
+.input-container{
+    position: relative;
+}
+.sharing-container .input-container input{
+    width: 100%;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+    background: #f5fcff;
+    color: #13073f8c;
+}
+.input-container img{
+    position: absolute;
+    right: 2px;
+    height: 22px;
+    width: 30px;
+    top: 10px;
+    background: #f7fdff;
+    cursor: pointer;
+}
+.email-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.email-container form{
+    width: 470px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 15px;
+}
+.email-container .field{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.email-container label{
+    font-size: 20px;
+}
+.email-container input{
+    font-size: 20px;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    text-align: center;
+}
+.email-container input:focus{
+    outline: none;
+}
+.email-container button{
+    font-size: 17px;
+    padding: 15px 30px 15px 25px;
+    margin: 10px 190px;
+    background: var(--main-bg-color);
+    border: none;
+    border: 5px solid --border-color;
+    border-radius: 10px;
+    color: #607d8b;
+    cursor: pointer;
+}
+ .copy-alert{
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, 60px);
+    border-radius: 5px;
+    padding: 10px 20px;
+    background: #48b0e0;
+    color: #fff;
+    font-size: 18px;
+    transition: transform ease-in-out 0.2s;
+    box-shadow: 0px 24px 38px 3px rgba(0,0,0,0.14) , 
+    0px 9px 46px 8px rgba(0,0,0,0.12) , 
+    0px 11px 15px -7px rgba(0,0,0,0.2)  ;
+}  
+  .show.copy-alert {
+    transform: translate(50%, 0);
+  }
+
+.upload-vector{
+    background: url(./img/sideimg.svg) no-repeat center;
+    height: 50vh;
+    width: 50vw;
+    background-size: contain;
+}  
+@media screen and (max-width: 900px){
+    :root{
+        --container-width: 320px;
+    }
+    .email-container .field{
+        flex-direction: column;
+        width: 280px;
+        padding: 10px 13px; 
+    }
+    .email-container form{
+        width: 300px;
+    }
+    .email-container button{
+        margin: 10px 100px;
+    }
+    .upload-vector{
+        display: none;
+    }
+}

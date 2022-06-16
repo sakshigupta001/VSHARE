@@ -1,0 +1,31 @@
+{
+  "name": "file_backened",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "restart": "nodemon server",
+    "start": "node server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "core-util-is": "^1.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^14.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.7",
+    "multer": "^1.4.4",
+    "nodemailer": "^6.7.2",
+    "uuid": "^8.3.2"
+  },
+  "nodemonConfig": {
+  "ignore": ["uploads/*"]
+},
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

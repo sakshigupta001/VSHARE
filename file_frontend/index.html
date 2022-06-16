@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSHARE-Share files easily</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="webhead">
+        <div class="heading">VSHARE</div>
+        <div class="subheading">Share files easily</div>
+    </div> 
+    <div class="upload-vector"></div>
+
+    <section class="upload-container">
+        <div class="drop-zone">
+            <div class="icon-container">
+                <img src="./img/file.svg" alt="File Icon" class="center" draggable="false">
+                <img src="./img/file.svg" alt="File Icon" class="left" draggable="false">
+                <img src="./img/file.svg" alt="File Icon" class="right" draggable="false">
+            </div>
+            <input id="file" type="file">
+            <div class="title">Drop your files here or <span class="browse">Browse</span></div>
+        </div>
+        
+        <div class="sharing-container">
+            <p id="filetxt">FILE LINK</p>
+            <div class="input-container">
+                <input type="text" id="fileURL" readonly required>
+                <img src="./img/copy-icon.svg" alt="copy icon" id="copyBtn">
+            </div>
+            <div class="email-container">
+                <p>Send via Email</p>
+                <form id="emailform">
+                    <div class="field">
+                        <label for="sender">Your email</label>
+                        <input type="email" name="from-email" id="sender" required>
+                    </div>
+                    <div class="field">
+                        <label for="receiver">Receiver's email</label>
+                        <input type="email" name="to-email" id="receiver" required>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <div class="copy-alert">Copied to clipboard</div>
+    <script src="index.js"></script>
+</body>
+</html>
